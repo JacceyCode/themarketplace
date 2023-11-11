@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className="h-20 w-full border-b-[1px] border-b-gray-800 bg-white">
       <section className="font-titleFont mx-auto  flex h-full max-w-[1280px] items-center justify-between">
-        <span className="text-3xl font-extrabold italic text-slate-950 line-through">
+        <span className="text-3xl font-extrabold italic text-slate-950">
           D-MarketPlace
         </span>
 
