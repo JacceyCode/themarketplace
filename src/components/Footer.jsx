@@ -1,6 +1,5 @@
 import { IconContext } from "react-icons";
 import {
-  FaBtc,
   FaCcMastercard,
   FaCcPaypal,
   FaCcStripe,
@@ -33,7 +32,6 @@ function Footer() {
               <FaCcPaypal />
               <FaCcStripe />
               <FaMoneyCheckDollar />
-              <FaBtc />
             </IconContext.Provider>
           </section>
           <section className="flex space-x-5 text-lg text-gray-400">
