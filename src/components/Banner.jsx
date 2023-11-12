@@ -24,7 +24,7 @@ function Banner() {
       <section className="relative h-[650px] w-screen">
         <span
           style={{ transform: `translateX(-${curSlide * 100}vw)` }}
-          className="flex w-[400vw] transition-transform duration-1000"
+          className="flex h-full w-[400vw] transition-transform duration-1000"
         >
           <img
             className="h-full w-screen object-cover"
