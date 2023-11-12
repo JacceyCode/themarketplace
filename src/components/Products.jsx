@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import ProductsCard from "./ProductsCard";
 
-function Products() {
+function Products({ products }) {
   return (
     <section className="py-10">
       <section className="flex flex-col items-center space-y-4">
@@ -16,8 +17,10 @@ function Products() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-[1280px]">
-        <ProductsCard />
+      <section className="mx-auto grid max-w-[1280px] grid-cols-4 gap-10 py-10">
+        {products.map((item) => (
+          <ProductsCard key={item._id} product={item} />
+        ))}
       </section>
     </section>
   );
