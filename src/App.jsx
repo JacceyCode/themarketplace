@@ -3,6 +3,7 @@ import AppLayout from "./components/AppLayout";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import { productsData } from "./api/ProductCardApi";
+import Product from "./pages/Product";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         loader: productsData,
+      },
+      {
+        path: "/product/:id",
+        element: <Product />,
       },
       {
         path: "/cart",

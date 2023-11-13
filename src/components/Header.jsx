@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IconContext } from "react-icons";
 
@@ -6,9 +6,9 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 h-20 w-full border-b-[1px] border-b-gray-800 bg-white">
       <section className="font-titleFont mx-auto  flex h-full max-w-[1280px] items-center justify-between">
-        <span className="text-3xl font-extrabold italic text-slate-950">
+        <Link to="/" className="text-3xl font-extrabold italic text-slate-950">
           D-MarketPlace
-        </span>
+        </Link>
 
         <section className="flex items-center space-x-8">
           <nav className="flex items-center space-x-8">

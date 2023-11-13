@@ -1,10 +1,25 @@
 /* eslint-disable react/prop-types */
 import { FaArrowRight } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 function ProductsCard({ product }) {
+  const navigate = useNavigate();
+  const _id = product.title;
+  const idString = _id.toLowerCase().split(" ").join("");
+  const handleDetails = () => {
+    navigate(`/product/${idString}`, {
+      state: {
+        item: product,
+      },
+    });
+  };
+
   return (
     <section className="group relative">
-      <section className="h-96 w-full cursor-pointer overflow-hidden">
+      <section
+        onClick={handleDetails}
+        className="h-96 w-full cursor-pointer overflow-hidden"
+      >
         <img
           className="h-full w-full object-cover duration-500 group-hover:scale-110"
           src={product.image}
