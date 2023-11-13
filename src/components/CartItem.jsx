@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineArrowLeft, AiOutlineClose } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
-import { deleteItem, resetCart } from "../redux/dMarketPlaceSlice";
+import {
+  decrementQuantity,
+  deleteItem,
+  increamentQuantity,
+  resetCart,
+} from "../redux/dMarketPlaceSlice";
 
 function CartItem() {
   const dispatch = useDispatch();
@@ -40,7 +45,7 @@ function CartItem() {
               <p className="text-sm">Quantity</p>
               <section className="flex items-center gap-4 text-sm font-semibold">
                 <button
-                  //   onClick={() => (item.quantity === 1 ? 1 : --item.quantity)}
+                  onClick={() => dispatch(decrementQuantity(item))}
                   className="flex h-5 cursor-pointer items-center justify-center border px-2 text-lg font-normal duration-300 hover:bg-gray-700 hover:text-white active:bg-black"
                 >
                   -
@@ -49,7 +54,7 @@ function CartItem() {
                 <span>{item.quantity}</span>
 
                 <button
-                  //   onClick={() => item.quantity + 1}
+                  onClick={() => dispatch(increamentQuantity(item))}
                   className="flex h-5 cursor-pointer items-center justify-center border px-2 text-lg font-normal duration-300 hover:bg-gray-700 hover:text-white active:bg-black"
                 >
                   +
