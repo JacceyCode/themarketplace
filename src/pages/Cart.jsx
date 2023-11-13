@@ -1,5 +1,44 @@
+import { useSelector } from "react-redux";
+import CartItem from "../components/CartItem";
+
 function Cart() {
-  return <div>CART FEATURE</div>;
+  const productData = useSelector((store) => store.market.productData);
+  console.log(productData);
+  return (
+    <section>
+      <img
+        className="h-60 w-full object-cover"
+        src="https://images.pexels.com/photos/1435752/pexels-photo-1435752.jpeg"
+        alt="cartImg"
+      />
+
+      <section className="mx-auto flex max-w-[1280px] py-20">
+        <CartItem />
+
+        <section className="w-1/3 bg-[#fafafa] px-4 py-6">
+          <section className="flex flex-col gap-6 border-b border-b-gray-400 pb-6">
+            <h2 className="text-2xl font-medium">Cart totals</h2>
+            <p className="flex items-center gap-4 text-base">
+              Subtotal{" "}
+              <span className="font-titleFont text-lg font-bold">$ 200</span>
+            </p>
+            <p className="flex items-start gap-4 text-base">
+              Shipping{" "}
+              <span className="font-titleFont text-lg font-bold">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </span>
+            </p>
+          </section>
+          <p className="font-titleFont mt-6 flex justify-between font-semibold">
+            Total <span className="text-xl font-bold">$ 200</span>
+          </p>
+          <button className="mt-6 w-full bg-black py-3 text-base text-white duration-300 hover:bg-gray-800">
+            Proceed to checkout
+          </button>
+        </section>
+      </section>
+    </section>
+  );
 }
 
 export default Cart;
