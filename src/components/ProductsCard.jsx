@@ -3,6 +3,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../redux/dMarketPlaceSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 function ProductsCard({ product }) {
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ function ProductsCard({ product }) {
               <p className="font-semibold">${product.price}</p>
             </section>
             <p
-              onClick={() =>
+              onClick={() => {
                 dispatch(
                   addToCart({
                     _id: product._id,
@@ -52,8 +53,9 @@ function ProductsCard({ product }) {
                     quantity: 1,
                     description: product.description,
                   }),
-                )
-              }
+                );
+                toast.success(`${product.title} is added to cart`);
+              }}
               className="absolute top-0 z-20 flex w-[100px] -translate-x-32 transform cursor-pointer items-center gap-1 text-gray-500 transition-transform duration-500 hover:text-gray-900 group-hover:translate-x-0"
             >
               Add to cart
@@ -76,6 +78,18 @@ function ProductsCard({ product }) {
           )}
         </section>
       </section>
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </section>
   );
 }

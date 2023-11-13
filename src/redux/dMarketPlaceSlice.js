@@ -19,9 +19,37 @@ export const marketSlice = createSlice({
         state.productData.push(action.payload);
       }
     },
+    deleteItem: (state, action) => {
+      state.productData = state.productData.filter(
+        (item) => item._id !== action.payload._id,
+      );
+    },
+    resetCart: (state) => {
+      state.productData = [];
+    },
+    increamentQuantity: (state, action) => {
+      const item = state.productData.find(
+        (item) => item._id === action.payload._id,
+      );
+      if (item) {
+        item.quantity++;
+      }
+    },
+    decrementQuantity: (state, action) => {
+      const item = state.productData.find(
+        (item) => item._id === action.payload._id,
+      );
+      item?.quantity === 1 ? (item.quantity = 1) : item.quantity--;
+    },
   },
 });
 
-export const { addToCart } = marketSlice.actions;
+export const {
+  addToCart,
+  deleteItem,
+  resetCart,
+  increamentQuantity,
+  decrementQuantity,
+} = marketSlice.actions;
 
 export default marketSlice.reducer;

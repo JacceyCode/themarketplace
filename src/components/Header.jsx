@@ -1,8 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IconContext } from "react-icons";
 
 function Header() {
+  const productData = useSelector((store) => store.market.productData);
+
   return (
     <header className="sticky top-0 z-50 h-20 w-full border-b-[1px] border-b-gray-800 bg-white">
       <section className="font-titleFont mx-auto  flex h-full max-w-[1280px] items-center justify-between">
@@ -29,14 +32,14 @@ function Header() {
             </NavLink>
           </nav>
 
-          <span className="relative">
+          <Link to="/cart" className="relative">
             <IconContext.Provider value={{ size: "36px" }}>
               <AiOutlineShoppingCart />
             </IconContext.Provider>
-            <span className="absolute left-2 top-[5px] flex w-6 items-center justify-center text-sm font-semibold">
-              0
+            <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-black text-sm font-semibold text-white">
+              {productData.length}
             </span>
-          </span>
+          </Link>
 
           <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-white">
             DMP
