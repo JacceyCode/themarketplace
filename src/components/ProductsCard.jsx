@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import { FaArrowRight } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addToCart } from "../redux/dMarketPlaceSlice";
 
 function ProductsCard({ product }) {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const _id = product.title;
   const idString = _id.toLowerCase().split(" ").join("");
@@ -38,7 +41,21 @@ function ProductsCard({ product }) {
               <p className="text-gray-500 line-through">${product.oldPrice}</p>
               <p className="font-semibold">${product.price}</p>
             </section>
-            <p className="absolute top-0 z-20 flex w-[100px] -translate-x-32 transform cursor-pointer items-center gap-1 text-gray-500 transition-transform duration-500 hover:text-gray-900 group-hover:translate-x-0">
+            <p
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    _id: product._id,
+                    title: product.title,
+                    image: product.image,
+                    price: product.price,
+                    quantity: 1,
+                    description: product.description,
+                  }),
+                )
+              }
+              className="absolute top-0 z-20 flex w-[100px] -translate-x-32 transform cursor-pointer items-center gap-1 text-gray-500 transition-transform duration-500 hover:text-gray-900 group-hover:translate-x-0"
+            >
               Add to cart
               <span>
                 <FaArrowRight />
