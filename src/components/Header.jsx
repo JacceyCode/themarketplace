@@ -5,6 +5,7 @@ import { IconContext } from "react-icons";
 
 function Header() {
   const productData = useSelector((store) => store.market.productData);
+  const userInfo = useSelector((store) => store.market.userInfo);
 
   return (
     <header className="sticky top-0 z-50 h-20 w-full border-b-[1px] border-b-gray-800 bg-white">
@@ -41,11 +42,26 @@ function Header() {
             </span>
           </Link>
 
-          <Link
-            to="/login"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-white"
-          >
-            DMP
+          <Link to="/login">
+            {/* <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-white">
+              DMP
+            </span> */}
+            {userInfo ? (
+              <section className="flex items-center gap-2">
+                <p className="font-titleFont text-base font-semibold underline underline-offset-2">
+                  {userInfo.name}
+                </p>
+                <img
+                  className="h-8 w-8 rounded-full"
+                  src={userInfo.image}
+                  alt="userLogo"
+                />
+              </section>
+            ) : (
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-white">
+                DMP
+              </span>
+            )}
           </Link>
         </section>
       </section>

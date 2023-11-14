@@ -7,23 +7,38 @@ import {
 import { IconContext } from "react-icons";
 import { FaGithub } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
+import { addUser, removeUser } from "../redux/dMarketPlaceSlice";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleGoogleLogin = (e) => {
     e.preventDefault();
     signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        const signIn = dispatch(
+          addUser({
+            _id: user.uid,
+            name: user.displayName,
+            email: user.email,
+            image: user.photoURL,
+          }),
+        );
+        if (user.emailVerified && signIn.payload) navigate("/");
+        // setTimeout(() => {
+        //   navigate("/");
+        // }, 1500);
       })
       .catch((error) => {
         console.log(error);
+        toast.error("Sign in failed, try again!");
       });
   };
 
@@ -32,7 +47,8 @@ function Login() {
       .then(() => {
         // Sign-out successful.
         toast.success("Log Out Successful!");
-        // dispatch(removeUser());
+        const signOut = dispatch(removeUser());
+        if (!signOut.payload) navigate("/");
       })
       .catch((error) => {
         // An error happened.
