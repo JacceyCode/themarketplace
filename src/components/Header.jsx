@@ -41,9 +41,12 @@ function Header() {
             </span>
           </Link>
 
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-white">
+          <Link
+            to="/login"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-white"
+          >
             DMP
-          </span>
+          </Link>
         </section>
       </section>
     </header>
