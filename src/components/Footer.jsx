@@ -18,7 +18,7 @@ import { BsPaypal, BsPersonFill } from "react-icons/bs";
 function Footer() {
   return (
     <section className="tablet:py-20 bg-black py-10 font-titleFont text-[#949494]">
-      <section className="laptop:grid-cols-4 laptop:px-0 laptop:gap-0 tablet:grid-cols-2 mx-auto grid max-w-[1280px] gap-x-8 gap-y-10 px-3">
+      <section className="laptop:grid-cols-4 desktop:px-0 laptop:gap-0 tablet:grid-cols-2 mx-auto grid max-w-[1280px] gap-x-8 gap-y-10 px-3">
         {/* ///////////////// LogoIcon Start here /////////////////// */}
         <section className="laptop:gap-7 flex flex-col gap-2">
           <span className="text-3xl font-extrabold italic">D-MarketPlace</span>
