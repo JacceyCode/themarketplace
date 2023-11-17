@@ -17,10 +17,10 @@ import { BsPaypal, BsPersonFill } from "react-icons/bs";
 
 function Footer() {
   return (
-    <section className="font-titleFont bg-black py-20 text-[#949494]">
-      <section className="mx-auto grid max-w-[1280px] grid-cols-4">
+    <section className="tablet:py-20 bg-black py-10 font-titleFont text-[#949494]">
+      <section className="laptop:grid-cols-4 laptop:px-0 laptop:gap-0 tablet:grid-cols-2 mx-auto grid max-w-[1280px] gap-x-8 gap-y-10 px-3">
         {/* ///////////////// LogoIcon Start here /////////////////// */}
-        <section className="flex flex-col gap-7">
+        <section className="laptop:gap-7 flex flex-col gap-2">
           <span className="text-3xl font-extrabold italic">D-MarketPlace</span>
           <p className="text-base tracking-wide text-white">
             &copy; dmarketplace.com
@@ -99,7 +99,7 @@ function Footer() {
           />
 
           <button
-            className="border border-t-0 text-sm text-white hover:bg-gray-900 active:bg-white active:text-black"
+            className="border border-t-0 py-1 text-sm text-white hover:bg-gray-900 active:bg-white active:text-black"
             type="submit"
           >
             Subscribe
