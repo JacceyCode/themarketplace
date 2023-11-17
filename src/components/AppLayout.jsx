@@ -1,14 +1,14 @@
-import { Outlet, ScrollRestoration } from "react-router-dom";
+// import { Outlet, ScrollRestoration } from "react-router-dom";
 import Header from "./Header";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 function AppLayout() {
   return (
     <section className="font-bodyFont">
       <Header />
-      <ScrollRestoration />
-      <Outlet />
-      <Footer />
+      {/* <ScrollRestoration /> */}
+      {/* <Outlet /> */}
+      {/* <Footer /> */}
     </section>
   );
 }
