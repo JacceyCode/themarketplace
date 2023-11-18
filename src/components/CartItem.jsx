@@ -14,7 +14,7 @@ function CartItem() {
   const productData = useSelector((store) => store.market.productData);
 
   return (
-    <section className="pr-10 laptop:w-2/3">
+    <section className="px-1 tablet:px-0 tablet:pr-10 laptop:w-2/3">
       <section className="w-full">
         <h2 className="font-titleFont text-2xl">Shopping Cart</h2>
       </section>
