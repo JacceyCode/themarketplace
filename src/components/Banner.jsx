@@ -21,13 +21,13 @@ function Banner() {
 
   return (
     <section className="h-auto w-full overflow-x-hidden">
-      <section className="relative h-[650px] w-screen">
+      <section className="relative h-[230px] w-screen tablet:h-[400px] laptop:h-[650px]">
         <span
           style={{ transform: `translateX(-${curSlide * 100}vw)` }}
           className="flex h-full w-[400vw] transition-transform duration-1000"
         >
           <img
-            className="h-full w-screen object-cover"
+            className="w-screen object-cover"
             src={data[0]}
             alt="Banner"
             loading="priority"
@@ -52,7 +52,7 @@ function Banner() {
           />
         </span>
 
-        <span className="absolute bottom-44 left-0 right-0 mx-auto flex w-fit space-x-8">
+        <span className="absolute bottom-5 left-0 right-0 mx-auto flex w-fit space-x-8 laptop:bottom-44">
           <span
             onClick={prevSlide}
             className="flex h-12 w-14 items-center justify-center border-[1px] border-gray-700 duration-300 hover:cursor-pointer hover:bg-gray-700 hover:text-white active:bg-gray-900"
