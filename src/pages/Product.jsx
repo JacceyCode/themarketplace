@@ -17,8 +17,8 @@ function Product() {
 
   return (
     <section>
-      <section className="mx-auto my-10 flex max-w-[1280px] gap-10">
-        <section className="relative w-2/5">
+      <section className="mx-auto my-10 flex max-w-[1280px] flex-col gap-10 tablet:flex-row">
+        <section className="relative tablet:w-2/5">
           <img
             className="h-full w-full object-cover"
             src={details.image}
@@ -27,14 +27,14 @@ function Product() {
 
           <section className="absolute right-0 top-4">
             {details.isNew && (
-              <p className="font-titleFont bg-black px-6 py-1 font-semibold text-white">
+              <p className="bg-black px-6 py-1 font-titleFont font-semibold text-white">
                 Sale
               </p>
             )}
           </section>
         </section>
 
-        <section className="flex w-3/5 flex-col justify-center gap-12">
+        <section className="flex flex-col justify-center gap-12 px-3 tablet:w-3/5 tablet:px-0">
           <section>
             <h2 className="text-4xl font-semibold">{details.title}</h2>
             <section className="mt-3 flex items-center gap-4">
@@ -98,7 +98,7 @@ function Product() {
                 );
                 toast.success(`${details.title} is added to cart`);
               }}
-              className="bg-black px-6 py-3 text-white active:bg-gray-800"
+              className="bg-black p-2 text-white active:bg-gray-800 tablet:px-6 tablet:py-3"
             >
               Add to cart
             </button>
