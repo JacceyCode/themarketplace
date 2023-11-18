@@ -14,7 +14,7 @@ function CartItem() {
   const productData = useSelector((store) => store.market.productData);
 
   return (
-    <section className="w-2/3 pr-10">
+    <section className="pr-10 laptop:w-2/3">
       <section className="w-full">
         <h2 className="font-titleFont text-2xl">Shopping Cart</h2>
       </section>
@@ -44,31 +44,34 @@ function CartItem() {
                     alt="productImg"
                   />
                 </section>
-                <h2 className="w-52">{item.title}</h2>
-                <p className="w-10">{item.price}</p>
 
-                <section className="flex w-52 items-center justify-between gap-4 border p-3 text-gray-500">
-                  <p className="text-sm">Quantity</p>
-                  <section className="flex items-center gap-4 text-sm font-semibold">
-                    <button
-                      onClick={() => dispatch(decrementQuantity(item))}
-                      className="flex h-5 cursor-pointer items-center justify-center border px-2 text-lg font-normal duration-300 hover:bg-gray-700 hover:text-white active:bg-black"
-                    >
-                      -
-                    </button>
+                <section className="flex flex-col gap-2 tablet:flex-row tablet:items-center">
+                  <h2 className="w-52">{item.title}</h2>
+                  <p className="w-10">{item.price}</p>
 
-                    <span>{item.quantity}</span>
+                  <section className="flex w-52 items-center justify-between gap-4 border p-3 text-gray-500">
+                    <p className="text-sm">Quantity</p>
+                    <section className="flex items-center gap-4 text-sm font-semibold">
+                      <button
+                        onClick={() => dispatch(decrementQuantity(item))}
+                        className="flex h-5 cursor-pointer items-center justify-center border px-2 text-lg font-normal duration-300 hover:bg-gray-700 hover:text-white active:bg-black"
+                      >
+                        -
+                      </button>
 
-                    <button
-                      onClick={() => dispatch(increamentQuantity(item))}
-                      className="flex h-5 cursor-pointer items-center justify-center border px-2 text-lg font-normal duration-300 hover:bg-gray-700 hover:text-white active:bg-black"
-                    >
-                      +
-                    </button>
+                      <span>{item.quantity}</span>
+
+                      <button
+                        onClick={() => dispatch(increamentQuantity(item))}
+                        className="flex h-5 cursor-pointer items-center justify-center border px-2 text-lg font-normal duration-300 hover:bg-gray-700 hover:text-white active:bg-black"
+                      >
+                        +
+                      </button>
+                    </section>
                   </section>
-                </section>
 
-                <p className="w-14">${item.quantity * item.price}</p>
+                  <p className="w-14">${item.quantity * item.price}</p>
+                </section>
               </section>
             ))}
           </section>

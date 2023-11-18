@@ -35,10 +35,10 @@ function Cart() {
         alt="cartImg"
       />
 
-      <section className="mx-auto flex max-w-[1280px] py-20">
+      <section className="mx-auto flex max-w-[1280px] flex-col py-20 laptop:flex-row">
         <CartItem />
 
-        <section className="w-1/3 bg-[#fafafa] px-4 py-6">
+        <section className="bg-[#fafafa] px-4 py-6 laptop:w-1/3">
           <section className="flex flex-col gap-6 border-b border-b-gray-400 pb-6">
             <h2 className="text-2xl font-medium">Cart totals</h2>
             <p className="flex items-center gap-4 text-base">
@@ -54,7 +54,7 @@ function Cart() {
               </span>
             </p>
           </section>
-          <p className="font-titleFont mt-6 flex justify-between font-semibold">
+          <p className="mt-6 flex justify-between font-titleFont font-semibold">
             Total <span className="text-xl font-bold">$ {totalAmt}</span>
           </p>
           <button
