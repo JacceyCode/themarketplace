@@ -17,7 +17,7 @@ function Products({ products }) {
         </p>
       </section>
 
-      <section className="mx-auto grid max-w-[1280px] grid-cols-4 gap-10 py-10">
+      <section className="mx-auto grid max-w-[1280px] gap-10 py-10 tablet:grid-cols-2 laptop:grid-cols-4">
         {products.map((item) => (
           <ProductsCard key={item._id} product={item} />
         ))}
