@@ -72,7 +72,7 @@ function ProductsCard({ product }) {
 
         <section className="absolute right-0 top-4">
           {product.isNew && (
-            <p className="font-titleFont bg-black px-6 py-1 font-semibold text-white">
+            <p className="bg-black px-6 py-1 font-titleFont font-semibold text-white">
               Sale
             </p>
           )}

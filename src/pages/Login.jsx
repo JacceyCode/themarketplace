@@ -5,7 +5,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { IconContext } from "react-icons";
-import { FaGithub } from "react-icons/fa6";
+// import { FaGithub } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
@@ -32,9 +32,6 @@ function Login() {
           }),
         );
         if (user.emailVerified && signIn.payload) navigate("/");
-        // setTimeout(() => {
-        //   navigate("/");
-        // }, 1500);
       })
       .catch((error) => {
         console.log(error);
@@ -59,7 +56,7 @@ function Login() {
 
   return (
     <section className="flex w-full flex-col items-center justify-center gap-10 py-20">
-      <section className="flex w-full items-center justify-center gap-10">
+      <section className="flex w-full flex-col items-center justify-center gap-10 tablet:flex-row">
         <section
           onClick={handleGoogleLogin}
           className="flex h-12 w-60 cursor-pointer items-center justify-center gap-2 rounded-md border border-gray-400 text-base tracking-wide duration-300 hover:border-blue-600"
@@ -77,7 +74,7 @@ function Login() {
         </button>
       </section>
 
-      <section className="flex w-full items-center justify-center gap-10">
+      {/* <section className="flex w-full flex-col items-center justify-center gap-10 tablet:flex-row">
         <section className="flex h-12 w-60 cursor-pointer items-center justify-center gap-2 rounded-md border border-gray-400 text-base tracking-wide duration-300 hover:border-blue-600">
           <IconContext.Provider value={{ size: "32px" }}>
             <FaGithub />
@@ -87,7 +84,7 @@ function Login() {
         <button className="rounded-md bg-black px-8 py-3 text-base tracking-wide text-white duration-300 hover:bg-gray-800">
           Sign Out
         </button>
-      </section>
+      </section> */}
 
       <ToastContainer
         position="top-left"
