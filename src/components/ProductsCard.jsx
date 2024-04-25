@@ -39,7 +39,7 @@ function ProductsCard({ product }) {
 
           <section className="relative flex w-28 justify-end gap-2 overflow-hidden text-sm">
             <section className="flex transform gap-2 transition-transform duration-500 group-hover:translate-x-24">
-              <p className="text-gray-500 line-through">${product.oldPrice}</p>
+              <p className="text-gray-500 line-through">{product.oldPrice}</p>
               <p className="font-semibold">${product.price}</p>
             </section>
             <p

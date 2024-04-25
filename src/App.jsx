@@ -4,11 +4,13 @@ import Cart from "./pages/Cart";
 import Product from "./pages/Product";
 import Login from "./pages/Login";
 import AppLayout from "./components/AppLayout";
+import ErrorPage from "./pages/ErrorPage";
 import { productsData } from "./api/ProductCardApi";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

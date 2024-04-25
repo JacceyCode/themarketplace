@@ -24,9 +24,9 @@ function CartItem() {
       ) : (
         <>
           <section>
-            {productData.map((item) => (
+            {productData.map((item, index) => (
               <section
-                key={item._id}
+                key={index}
                 className="mt-6 flex items-center justify-between gap-6"
               >
                 <section className="flex items-center gap-2">
