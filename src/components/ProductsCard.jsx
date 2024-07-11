@@ -46,7 +46,7 @@ function ProductsCard({ product }) {
               onClick={() => {
                 dispatch(
                   addToCart({
-                    _id: product._id,
+                    _id: product.id,
                     title: product.title,
                     image: product.image,
                     price: product.price,
